@@ -50,3 +50,7 @@ function error($errorMsg)
 {
     require_once VIEWS . "/error/error.php";
 }
+
+function createEmployee(){
+    require_once  VIEWS . "employee/createEmployees.php";
+}
