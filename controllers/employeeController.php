@@ -7,6 +7,18 @@ require_once MODELS . "employeeModel.php";
 //Keep in mind that the function to be executed has to be one of the ones declared in this controller
 // TODO Implement the logic
 
+$action = '';
+
+if ( isset ($_REQUEST['action'])){
+    $action = $_REQUEST['action'];
+}
+
+if( function_exists($action)){
+    call_user_func($action, $_REQUEST);
+}else{
+    error('Invalid User action  EMPLOYEE CONTROLLER ');
+};
+
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
@@ -15,7 +27,12 @@ require_once MODELS . "employeeModel.php";
  */
 function getAllEmployees()
 {
-    //
+    $employees = get();
+    if(isset($employees)){
+        require_once VIEWS . 'employee/employeeDashboard.php';
+    }else{
+        error('There is a database error, Try Again GET_ALL_EMPLOYEES ');
+    }
 }
 
 /**

@@ -365,3 +365,29 @@ This will be the file that shows all the records of the database.
 ## Resources
 
 - [Readme example](https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a)
+
+
+
+What is an architecture pattern?
+    R: An architectural pattern is a general, reusable solution to a commonly occurring problem in software architecture within a given context. Architectural patterns are similar to software design pattern but have a broader scope.
+
+What is the MVC pattern?
+    R: This pattern, also known as MVC pattern, divides an interactive application in to 3 parts as, model — contains the core functionality and data view — displays the information to the user (more than one view may be defined) controller — handles the input from the user This is done to separate internal representations of information from the ways information is presented to, and accepted from, the user. It decouples components and allows efficient code reuse.
+
+Draw a scheme where you understand that the MVC pattern is clearly
+    [View] <=====> [Controller] <=====> [Model]
+
+Explain in which cases you would use this pattern
+    Architecture for World Wide Web applications in major programming languages.
+    Web frameworks
+
+Describe step by step what happens in this pattern from when you create a Request until a Response is returned (you can give more than one example if you consider it necessary).
+    In the case of a web page all customer requests (view) must pass through the controller, for example when the user logs in, makes a request to the controller that makes another request to the database (model) that responds and according to this response returns the user. example if the login is correct enters its user page if the login wrong case forwards the login again and shows the error. This way with all the requests made by the user, which will always be validated and according to this returns a different answer.
+
+What advantages do you think this pattern has to use?
+    Design patterns are used because they make your job easier
+    Design patterns help you analyze the more abstract areas of a program by providing concrete, well-tested solutions.
+    Design patterns help you write code faster by providing a clearer picture of how you are implementing the design.
+    Design patterns encourage code reuse and accommodate change by supplying well-tested mechanisms for delegation and composition, and other non-inheritance based reuse techniques.
+    Design patterns encourage more legible and maintainable code by following well-understood paths.
+    Design patterns increasingly provide a common language and jargon for programmers.
