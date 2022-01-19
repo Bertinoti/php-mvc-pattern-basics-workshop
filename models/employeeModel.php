@@ -20,7 +20,22 @@ function get()
 
 function getById($id)
 {
+     $query = conn() -> prepare("select * from employees WHERE id =  $id;");
+
+    try{
+        $query-> execute();
+        $employees = $query -> fetchAll();
+        json_encode($employees);
+
+        return $employees;
+    }catch(PDOException $e){
+        return[];
+    }
+
 }
+
+
+
 
 function newEmlpoyee()
 {
@@ -31,11 +46,11 @@ function newEmlpoyee()
 
         $employees = $query->fetchAll();
 
+        header('?controller=employee&action=getallemployees');
         return $employees;
     } catch (PDOException $e) {
         return [];
     }
-    //header('?controller=employee&action=getallemployees');
 };
 
 function delEmployee($id)
@@ -49,4 +64,24 @@ function delEmployee($id)
     } catch (PDOException $e) {
         return [];
     }
+}
+
+function updateEmployee($id){
+    $query = conn()->prepare(" UPDATE employees 
+    SET
+        name = ?,
+        last_name = ?,
+        email = ?,
+        gender_id = ?,
+        avatar = ?,
+        age = ?,
+        phone_number = ?,
+        city = ?,
+        street_address = ?,
+        state = ?,
+        postal_code = ?
+    WHERE
+        id = $id;
+    ")
+    
 }

@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/style.css" ?> ">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <script src="<?= BASE_URL . "/assets/js/utils.js"?> "></script>
 </head>
 
 <body>
@@ -49,8 +51,8 @@
         </tbody>
     </table>
     <div class="form-row justify-content-around">
-        <a id="home" class="btn btn-lg btn-primary col-md-4" href="?controller=employee&action=createEmployee">Create</a>
-        <a id="home" class="btn btn-lg btn-secondary col-md-4" href="./">Back</a>
+        <a id="home" class="btn btn-lg btn-primary col-md-4" href="?controller=employee&action=createEmployee">Create Employee </a>
+        <a id="home" class="btn btn-lg btn-secondary col-md-4" href="./">Back to Main Page</a>
     </div>
 </body>
 

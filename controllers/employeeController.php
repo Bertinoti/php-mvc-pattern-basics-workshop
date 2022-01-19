@@ -9,20 +9,27 @@ require_once MODELS . "employeeModel.php";
 
 $action = '';
 
-if ( isset ($_REQUEST['action'])){
+if (isset($_REQUEST['action'])) {
     $action = $_REQUEST['action'];
 }
 
-if( function_exists($action)){
+if (function_exists($action)) {
     call_user_func($action, $_REQUEST);
-}else{
+} else {
     error('Invalid User action  EMPLOYEE CONTROLLER ');
 };
 
 
-if ( isset($_POST['newEmlpoyee'])){
+if (isset($_POST['newEmlpoyee'])) {
     newEmlpoyee();
-    //header('Location: controller=employee&action=getAllEmployees');
+   //getAllEmployees();
+   //Array ( [controller] => employee [action] => getEmployee [id] => 1 )
+}
+
+if (isset($_POST['updateEmployee'])){
+    $id = $_GET['id'];
+    echo $id;
+    updateEmployee($id);
 }
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
@@ -33,9 +40,9 @@ if ( isset($_POST['newEmlpoyee'])){
 function getAllEmployees()
 {
     $employees = get();
-    if(isset($employees)){
+    if (isset($employees)) {
         require_once VIEWS . 'employee/employeeDashboard.php';
-    }else{
+    } else {
         error('There is a database error, Try Again GET_ALL_EMPLOYEES ');
     }
 }
@@ -45,7 +52,7 @@ function getAllEmployees()
  */
 function getEmployee($request)
 {
-    //
+    require_once  VIEWS . "employee/employeeUpdate.php";
 }
 
 /**
@@ -56,11 +63,13 @@ function error($errorMsg)
     require_once VIEWS . "/error/error.php";
 }
 
-function createEmployee(){
+function createEmployee()
+{
     require_once  VIEWS . "employee/createEmployees.php";
 }
 
-function deleteEmployee(){
+function deleteEmployee()
+{
     delEmployee($_GET['id']);
     getAllEmployees();
 }
