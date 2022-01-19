@@ -1,4 +1,16 @@
 body{
-    width: 90%;
-    margin: 0 auto;
+    width: 90% !important;
+    margin: 0 auto !important;
 }
+
+h1{
+    margin-top: 2% !important;
+    text-align: center;
+}
+
+div, table{
+    margin-top: 2% !important;
+    text-align: center;
+    font-size: large;
+}
+

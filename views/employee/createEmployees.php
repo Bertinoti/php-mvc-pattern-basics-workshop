@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Employee Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css ">
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/style.css" ?> ">
 </head>
 
 <body>
     <h1>Create Employee</h1>
 
     </style>
-    <form>
+    <form action = "?controller=employee&action=getallemployees" method="POST">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">First Name</label>
@@ -42,9 +42,15 @@
                 <input type="number" name="phonenumber" class="form-control" id="inputPhone">
             </div>
         </div>
-        <div class="form-group">
-            <label for="inputAvatar">Avatar</label>
-            <input type="text" class="form-control" id="inputAvatar" placeholder="https://pbs.twimg.com/profile_images/yourimage.jpg">
+        <div class="form-row">
+            <div class='form-group col-md-6'>
+                <label for="inputAvatar">Avatar</label>
+                <input type="text" name="avatar" class="form-control" id="inputAvatar" placeholder="https://pbs.twimg.com/profile_images/yourimage.jpg">
+            </div>
+            <div class='form-group col-md-6'>
+                <label for="inputEmail">Email</label>
+                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="john@mail.com">
+            </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
@@ -64,11 +70,13 @@
                 <input type="number" name="postalcode" class="form-control" id="inputPostalCode">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary"> Create </button> 
-        <a id="home" class="btn btn-secondary" href="?controller=employee&action=getallemployees">Back</a>
+        <div class="form-row justify-content-around">
+            <button type="submit" name='newEmlpoyee' class="btn btn-lg btn-prim'ary col-md-4 "> Create </button>
+            <a id="home" class="btn btn-lg btn-secondary col-md-4 " href="?controller=employee&action=getallemployees">Back</a>
+        </div>
     </form>
-    
-   
+
+
 </body>
 
 </html>

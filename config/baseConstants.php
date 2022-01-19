@@ -1,17 +1,19 @@
 <?php
 
-$documentroot = getcwd();
+$documentRoot = getcwd();
 
-define('BASE_PATH', $documentroot);
+//BASE PATH -> FOR REFERENCE FILES
+define("BASE_PATH", $documentRoot);
 
+//BASE URL -> FOR LINK CSS
 $uri = $_SERVER['REQUEST_URI'];
 
-if(isset($uri) && $uri !== null){
+if (isset($uri) && $uri !== null) {
     $uri = substr($uri, 1);
     $uri = explode('/', $uri);
-    $uri = 'http://$_SERVER[HTTP_HOST]'.'/'.$uri[0];
-}else{
-    $uri =null;
+    $uri = "http://$_SERVER[HTTP_HOST]" . "/" . $uri[0] . "/" . $uri[1]. "/" . $uri[2] . "/" . $uri[3];
+} else {
+    $uri = null;
 }
 
-define('BASE_URL', $uri);
+define("BASE_URL", $uri);

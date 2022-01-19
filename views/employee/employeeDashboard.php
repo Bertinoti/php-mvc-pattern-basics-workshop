@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Employee Dashboard </title>
+
+    <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/style.css" ?> ">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
@@ -46,7 +48,10 @@
             ?>
         </tbody>
     </table>
-    <a id="home" class="btn btn-primary" href="?controller=employee&action=createEmployee">Create</a>
-    <a id="home" class="btn btn-secondary" href="./">Back</a>
+    <div class="form-row justify-content-around">
+        <a id="home" class="btn btn-lg btn-primary col-md-4" href="?controller=employee&action=createEmployee">Create</a>
+        <a id="home" class="btn btn-lg btn-secondary col-md-4" href="./">Back</a>
+    </div>
 </body>
+
 </html>

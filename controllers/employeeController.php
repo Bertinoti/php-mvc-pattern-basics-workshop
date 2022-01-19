@@ -20,6 +20,11 @@ if( function_exists($action)){
 };
 
 
+if ( isset($_POST['newEmlpoyee'])){
+    newEmlpoyee();
+    //header('Location: controller=employee&action=getAllEmployees');
+}
+
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
 /**
@@ -53,4 +58,9 @@ function error($errorMsg)
 
 function createEmployee(){
     require_once  VIEWS . "employee/createEmployees.php";
+}
+
+function deleteEmployee(){
+    delEmployee($_GET['id']);
+    getAllEmployees();
 }
