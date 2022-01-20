@@ -16,7 +16,7 @@
     <title>MCV Page Main </title>
 </head>
 
-<body>
+<body id="mainBody">
     <h1>Welcome to MVC Pattern Basics!</h1>
     <div class="list-group">
         <a class='list-group-item list-group-item-action' href="?controller=employee&action=getallemployees"> Employee Controller </a>

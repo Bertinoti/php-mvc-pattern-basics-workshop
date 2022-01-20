@@ -43,7 +43,6 @@ function newEmployee()
 
         $employees = $query->fetchAll();
 
-        echo 'Estamos Aqui ';
         return $employees;
     } catch (PDOException $e) {
         return [];
@@ -81,7 +80,6 @@ function updateEmployee($id){
     WHERE
         id = $id;
     ");
-
     try {
     $query->execute([$_POST["firstname"], $_POST["lastname"], $_POST["gender"], $_POST["avatar"], $_POST["email"], $_POST["age"], $_POST["phonenumber"],   $_POST["city"], $_POST["streetnumber"], $_POST["state"], $_POST["postalcode"]]);
 

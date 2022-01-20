@@ -8,9 +8,25 @@ h1{
     text-align: center;
 }
 
-div, table{
+table{
     margin-top: 2% !important;
+    margin-bottom: 2% !important;
     text-align: center;
     font-size: large;
 }
 
+#mainBody div{
+    margin-top: 2% !important;
+    margin-bottom: 2% !important;
+    text-align: center;
+    font-size: large;
+}
+
+#bodyForm div{
+    text-align: left;
+    font-size: large;
+}
+
+label{
+    margin-left: 3%;
+}

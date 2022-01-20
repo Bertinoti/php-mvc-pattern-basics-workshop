@@ -27,17 +27,27 @@
             $state = $emp['state'];
             $postalCode = $emp['postal_code'];
         }
-
     }
     ?>
 
 </head>
 
-<body>
-    <h1>Update Employee</h1>
+<body id="bodyForm">
+    <h1><?php
+        if(isset($_GET['id'])){
+            echo "Update Employee";
+        }else{
+            echo ' Create New Employee';
+        }?>
+    </h1>
 
     </style>
-    <form  action='?controller=employee&action=update&id=<?= $_REQUEST['id']?>' method="POST">
+    <form  action= ' ?controller=employee&action=<?php
+        if(isset($_GET['id'])){
+            $id = $_REQUEST["id"];
+            echo "update&id=$id";
+        }else{
+            echo 'createNewEmployee'; }?>'  method="POST">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputFirstName">First Name</label>
@@ -51,11 +61,13 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="inputGender">Gender</label>
-                <select name="gender" id="inputgender" class="form-control" value="<?= isset($_REQUEST["id"]) ?  $gender : '' ?>">
-                    <option selected>Choose...</option>
-                    <option value="1"  <?php if($gender == 1){ echo 'selected = "selected"';} ?>>Male</option>
-                    <option value="2"  <?php if($gender == 2){ echo 'selected = "selected"';} ?>>Female</option>
-                </select>
+                <?php if( isset($_REQUEST["id"])){
+                        $id = $_REQUEST["id"];
+                        include BASE_PATH . '/assets/html/selectUpdate.php';
+                    }else{
+                        include BASE_PATH . '/assets/html/selectNew.php';
+                }
+                ?>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputAge">Age</label>

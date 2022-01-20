@@ -19,26 +19,6 @@ if (function_exists($action)) {
     error('Invalid User action  EMPLOYEE CONTROLLER ');
 };
 
-
-//if (isset($_GET['newEmployee'])) {
-    //newEmployee();
-    
-    //getAllEmployees();
-    //Array ( [controller] => employee [action] => getEmployee [id] => 1 )
-//}
-
-
-// if(isset($_GET['id'])){
-//     define ('empId' , $_GET['id']);
-//     echo empId;
-// }
-
-
-// if (isset($_POST['updateEmlpoyee'])){
-//     updateEmployee( empId );
-//     //getAllEmployees();
-// }
-
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
 /**
@@ -72,7 +52,7 @@ function error($errorMsg)
 
 function createEmployee()
 {
-    require_once  VIEWS . "employee/createEmployees.php";
+    require_once  VIEWS . "employee/employeeUpdate.php";
 }
 
 function createNewEmployee(){
