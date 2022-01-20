@@ -20,17 +20,24 @@ if (function_exists($action)) {
 };
 
 
-if (isset($_POST['newEmlpoyee'])) {
-    newEmlpoyee();
-   //getAllEmployees();
-   //Array ( [controller] => employee [action] => getEmployee [id] => 1 )
-}
+//if (isset($_GET['newEmployee'])) {
+    //newEmployee();
+    
+    //getAllEmployees();
+    //Array ( [controller] => employee [action] => getEmployee [id] => 1 )
+//}
 
-if (isset($_POST['updateEmployee'])){
-    $id = $_GET['id'];
-    echo $id;
-    updateEmployee($id);
-}
+
+// if(isset($_GET['id'])){
+//     define ('empId' , $_GET['id']);
+//     echo empId;
+// }
+
+
+// if (isset($_POST['updateEmlpoyee'])){
+//     updateEmployee( empId );
+//     //getAllEmployees();
+// }
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
@@ -68,8 +75,19 @@ function createEmployee()
     require_once  VIEWS . "employee/createEmployees.php";
 }
 
+function createNewEmployee(){
+    newEmployee();
+    getAllEmployees();
+}
+
 function deleteEmployee()
 {
     delEmployee($_GET['id']);
+    getAllEmployees();
+}
+
+
+function update(){
+    updateEmployee($_GET['id']);
     getAllEmployees();
 }

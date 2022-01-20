@@ -15,7 +15,7 @@
     <h1>Create Employee</h1>
 
     </style>
-    <form action="?controller=employee&action=getallemployees" method="POST">
+    <form action="?controller=employee&action=createNewEmployee" method="POST">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputFirstName">First Name</label>

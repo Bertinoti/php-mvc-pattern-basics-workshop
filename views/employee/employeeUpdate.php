@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Employee Page</title>
+    <title>Update Employee Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="<?= BASE_URL . "/assets/css/style.css" ?> ">
@@ -27,16 +27,17 @@
             $state = $emp['state'];
             $postalCode = $emp['postal_code'];
         }
+
     }
     ?>
 
 </head>
 
 <body>
-    <h1>Create Employee</h1>
+    <h1>Update Employee</h1>
 
     </style>
-    <form  method="POST">
+    <form  action='?controller=employee&action=update&id=<?= $_REQUEST['id']?>' method="POST">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputFirstName">First Name</label>
@@ -94,7 +95,7 @@
             </div>
         </div>
         <div class="form-row justify-content-around">
-            <button type="submit" name='updateEmlpoyee' class="btn btn-lg btn-primary col-md-4 "> Update Employee </button>
+            <button type="submit" name='updateEmployee' class="btn btn-lg btn-primary col-md-4 "> Update Employee </button>
             <a id="home" class="btn btn-lg btn-secondary col-md-4 " href="?controller=employee&action=getallemployees">Back to Dashboard</a>
         </div>
     </form>

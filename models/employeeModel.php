@@ -34,10 +34,7 @@ function getById($id)
 
 }
 
-
-
-
-function newEmlpoyee()
+function newEmployee()
 {
     $query = conn()->prepare('INSERT INTO employees (name , last_name , gender_id, avatar, email, age, phone_number, city, street_address, state, postal_code) values (?,?,?,?,?,?,?,?,?,?,?)');
 
@@ -46,12 +43,13 @@ function newEmlpoyee()
 
         $employees = $query->fetchAll();
 
-        header('?controller=employee&action=getallemployees');
+        echo 'Estamos Aqui ';
         return $employees;
     } catch (PDOException $e) {
         return [];
     }
 };
+
 
 function delEmployee($id)
 {
@@ -67,13 +65,13 @@ function delEmployee($id)
 }
 
 function updateEmployee($id){
-    $query = conn()->prepare(" UPDATE employees 
+    $query = conn()->prepare(" UPDATE employees
     SET
         name = ?,
         last_name = ?,
-        email = ?,
         gender_id = ?,
         avatar = ?,
+        email = ?,
         age = ?,
         phone_number = ?,
         city = ?,
@@ -82,6 +80,16 @@ function updateEmployee($id){
         postal_code = ?
     WHERE
         id = $id;
-    ")
-    
+    ");
+
+    try {
+    $query->execute([$_POST["firstname"], $_POST["lastname"], $_POST["gender"], $_POST["avatar"], $_POST["email"], $_POST["age"], $_POST["phonenumber"],   $_POST["city"], $_POST["streetnumber"], $_POST["state"], $_POST["postalcode"]]);
+
+    $employees = $query->fetchAll();
+
+    return $employees;
+} catch (PDOException $e) {
+    return [];
+}
+
 }
