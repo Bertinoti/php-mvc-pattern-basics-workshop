@@ -17,10 +17,10 @@ if (isset($_GET['controller'])) {
         require_once $controller;
     } else {
         $errorMsg = "The page you are trying to access does not exist.";
-        require_once VIEWS . "error/error.php";
+        require_once VIEWS . "/error/error.php";
     }
 } else {
-    require_once VIEWS . "main/main.php";
+    require_once VIEWS . "/main/main.php";
 }
 
 function getControllerPath($controller): string

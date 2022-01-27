@@ -9,6 +9,6 @@
     <title>MVC Page ERROR </title>
 </head>
 <body>
-    <?php echo '<H1> $errorMsg</H1>' ?>
+    <?php echo '<H1> $errorMsg View Error</H1>' ?>
 </body>
 </html>

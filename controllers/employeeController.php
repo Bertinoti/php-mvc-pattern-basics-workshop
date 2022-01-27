@@ -28,7 +28,7 @@ function getAllEmployees()
 {
     $employees = get();
     if (isset($employees)) {
-        require_once VIEWS . 'employee/employeeDashboard.php';
+        require_once VIEWS . '/employee/employeeDashboard.php';
     } else {
         error('There is a database error, Try Again GET_ALL_EMPLOYEES ');
     }
@@ -39,7 +39,7 @@ function getAllEmployees()
  */
 function getEmployee($request)
 {
-    require_once  VIEWS . "employee/employeeUpdate.php";
+    require_once  VIEWS . "/employee/employeeUpdate.php";
 }
 
 /**
@@ -52,7 +52,7 @@ function error($errorMsg)
 
 function createEmployee()
 {
-    require_once  VIEWS . "employee/employeeUpdate.php";
+    require_once  VIEWS . "/employee/employeeUpdate.php";
 }
 
 function createNewEmployee(){
