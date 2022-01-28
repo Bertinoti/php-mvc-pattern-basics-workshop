@@ -21,8 +21,6 @@
     <div class="list-group">
         <a class='list-group-item list-group-item-action' href="?controller=employee&action=getallemployees"> Employee Controller </a>
     </div>
-    <div class="list-group">
-        <a class='list-group-item list-group-item-action' href="?controller=hobbies&action=getAllHobbies"> Hobbies Controller </a>
     </div>
 </body>
 

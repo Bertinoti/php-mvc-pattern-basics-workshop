@@ -5,6 +5,8 @@ function conn()
     try {
         $connection = "mysql:host=" . HOST . ";"
             . "dbname=" . DB . ";"
+            . "user=". USER . ";"
+            . "password=" . PASSWORD . ";"
             . "charset=" . CHARSET . ";";
 
         $options = [
@@ -16,6 +18,7 @@ function conn()
 
         return $pdo;
     } catch (PDOException $e) {
-        require_once(VIEWS . "/error/error.php");
+
+        //require_once(VIEWS . "/error/error.php");
     }
 }

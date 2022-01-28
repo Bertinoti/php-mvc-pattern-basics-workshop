@@ -15,9 +15,10 @@ if (isset($_REQUEST['action'])) {
 
 if (function_exists($action)) {
     call_user_func($action, $_REQUEST);
-} else {
-    error('Invalid User action  EMPLOYEE CONTROLLER ');
-};
+} 
+// else {
+//     error('Invalid User action  EMPLOYEE CONTROLLER ');
+//};
 
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
@@ -26,12 +27,15 @@ if (function_exists($action)) {
  */
 function getAllEmployees()
 {
+
     $employees = get();
+    print_r($employees);
     if (isset($employees)) {
         require_once VIEWS . '/employee/employeeDashboard.php';
-    } else {
-        error('There is a database error, Try Again GET_ALL_EMPLOYEES ');
-    }
+    } 
+    // else {
+    //     error('There is a database error, Try Again GET_ALL_EMPLOYEES ');
+    // }
 }
 
 /**
@@ -45,10 +49,10 @@ function getEmployee($request)
 /**
  * This function includes the error view with a message
  */
-function error($errorMsg)
-{
-    require_once VIEWS . "/error/error.php";
-}
+// function error($errorMsg)
+// {
+//     //require_once VIEWS . "/error/error.php";
+//}
 
 function createEmployee()
 {
